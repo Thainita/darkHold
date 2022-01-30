@@ -14,6 +14,34 @@ public class Mesurement {
     @Column(name = "pk_mesurement_id")
         private long mesurementId;
 
+    @ManyToOne
+    @JoinColumn(name = "fk_person_id", referencedColumnName = "pk_person_id")
+    private Person person;
+
     @Column(name = "weight")
         private float weight;
+
+    public long getMesurementId() {
+        return mesurementId;
+    }
+
+    public void setMesurementId(long mesurementId) {
+        this.mesurementId = mesurementId;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
 }

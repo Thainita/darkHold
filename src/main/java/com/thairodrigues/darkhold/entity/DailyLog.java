@@ -14,6 +14,14 @@ public class DailyLog {
     @Column(name = "pk_daily_log_id")
     private long dailyLogId;
 
+    @ManyToOne
+    @JoinColumn(name = "fk_person_id", referencedColumnName = "pk_person_id")
+    private Person person;
+
+    @ManyToOne
+    @JoinColumn(name = "fk_routine_id", referencedColumnName = "pk_routine_id")
+    private Routine routine;
+
     @Column(name = "exercise_name")
     private String exerciseName;
 
@@ -38,6 +46,22 @@ public class DailyLog {
 
     public void setDailyLogId(long dailyLogId) {
         this.dailyLogId = dailyLogId;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    public Routine getRoutine() {
+        return routine;
+    }
+
+    public void setRoutine(Routine routine) {
+        this.routine = routine;
     }
 
     public String getExerciseName() {

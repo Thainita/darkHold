@@ -14,6 +14,10 @@ public class Routine {
     @Column(name = "pk_routine_id")
     private long routineId;
 
+    @ManyToOne
+    @JoinColumn(name = "fk_person_id", referencedColumnName = "pk_person_id")
+    private Person person;
+
     @Column(name = "exercise_name")
     private String exerciseName;
 
@@ -35,6 +39,14 @@ public class Routine {
 
     public void setRoutineId(long routineId) {
         this.routineId = routineId;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
     public String getExerciseName() {
