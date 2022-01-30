@@ -2,12 +2,12 @@ package com.thairodrigues.darkhold.controller;
 
 import com.thairodrigues.darkhold.entity.Person;
 import com.thairodrigues.darkhold.repository.IPersonRepository;
-import jakarta.validation.Valid;
 import org.apache.kafka.common.errors.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,6 +48,7 @@ public class PersonController {
         response.put("deleted", Boolean.TRUE);
         return response;
     }
+
 
     @PutMapping("/{id}")
     public ResponseEntity<Person> updateUser(
